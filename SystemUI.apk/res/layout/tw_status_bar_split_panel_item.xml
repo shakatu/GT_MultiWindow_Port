@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ImageView android:id="@id/thumbnail" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerInside" />
+        <View android:id="@id/cue_dimming" android:background="@drawable/tw_multi_window_edit_dim" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <View android:id="@id/cue_switching" android:background="@drawable/tw_multi_window_switch_box" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <RelativeLayout android:id="@id/cue_switching_lrb" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <View android:id="@id/cue_switching_left" android:background="@drawable/tw_multi_window_switch_line_v" android:visibility="invisible" android:layout_width="6.0dip" android:layout_height="fill_parent" android:layout_alignParentLeft="true" />
+            <View android:id="@id/cue_switching_right" android:background="@drawable/tw_multi_window_switch_line_v" android:visibility="invisible" android:layout_width="6.0dip" android:layout_height="fill_parent" android:layout_alignParentRight="true" />
+            <View android:id="@id/cue_switching_bottom" android:background="@drawable/tw_multi_window_switch_line_h" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="6.0dip" android:layout_alignParentBottom="true" />
+        </RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="6.0dip" android:layout_marginRight="6.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="@drawable/popup_group_title_bg" android:layout_width="fill_parent" android:layout_height="36.0dip" android:layout_marginLeft="14.0dip" android:layout_marginRight="14.0dip" style="?android:attr/listSeparatorTextViewStyle">
+        <TextView android:textSize="20.0sp" android:textColor="#ffeef7fc" android:id="@*android:id/title" android:background="@null" android:paddingLeft="5.0dip" android:paddingRight="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0" style="?android:attr/listSeparatorTextViewStyle" />
+        <LinearLayout android:gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="fill_parent">
+            <ProgressBar android:id="@id/scanning_progress" android:layout_width="22.0dip" android:layout_height="22.0dip" android:text="@string/progress_scanning" style="?android:attr/progressBarStyleSmallTitle" />
+            <TextView android:textStyle="normal" android:textColor="#ffeef7fc" android:id="@id/scanning_text" android:background="@null" android:paddingLeft="4.0dip" android:paddingRight="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/progress_scanning" style="?android:attr/listSeparatorTextViewStyle" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

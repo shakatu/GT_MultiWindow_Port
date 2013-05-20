@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.systemui.recent.smartswitcher.SmartSwitcherRecentsPanelView android:id="@id/recents_root" android:layout_width="fill_parent" android:layout_height="fill_parent" systemui:recentItemLayout="@layout/status_bar_recent_item"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:systemui="http://schemas.android.com/apk/res/com.android.systemui">
+    <View android:id="@id/recents_transition_background" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <FrameLayout android:id="@id/recents_bg_protect" android:background="@drawable/status_bar_recents_background" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_alignParentBottom="true">
+        <FrameLayout android:id="@id/recents_container" android:clipChildren="false" android:clipToPadding="false" android:layout_width="wrap_content" android:layout_height="fill_parent" />
+        <LinearLayout android:layout_gravity="bottom" android:orientation="horizontal" android:background="@drawable/tw_ab_bottom_transparent_dark_holo" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <ImageButton android:id="@id/recents_launch_button" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/tw_recent_panel_ic_task_manager_holo_dark" android:layout_weight="1.0" android:contentDescription="@string/status_bar_recent_launch_task_manager_title" style="?android:attr/buttonStyle" />
+            <LinearLayout android:layout_gravity="center_vertical" android:background="@drawable/tw_divider_vertical_holo_dark" android:layout_width="1.0dip" android:layout_height="29.0dip" />
+            <ImageButton android:id="@id/recents_google_button" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/tw_recent_panel_ic_google_holo_dark" android:layout_weight="1.0" android:contentDescription="@string/status_bar_recent_launch_google_button" style="?android:attr/buttonStyle" />
+            <LinearLayout android:layout_gravity="center_vertical" android:background="@drawable/tw_divider_vertical_holo_dark" android:layout_width="1.0dip" android:layout_height="29.0dip" />
+            <ImageButton android:id="@id/recents_RemoveAll_button" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/tw_recent_panel_ic_delete_holo_dark" android:layout_weight="1.0" android:contentDescription="@string/status_bar_recent_remove_all_button" style="?android:attr/buttonStyle" />
+        </LinearLayout>
+    </FrameLayout>
+    <include android:id="@id/recents_no_apps" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="fill_parent" layout="@layout/tw_status_bar_no_recent_apps" />
+</com.android.systemui.recent.smartswitcher.SmartSwitcherRecentsPanelView>

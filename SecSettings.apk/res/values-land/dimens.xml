@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="appwidget_width">421.0dip</dimen>
+    <dimen name="appwidget_height">68.0dip</dimen>
+    <item type="dimen" name="APKTOOL_DUMMY_00bf">false</item>
+    <item type="dimen" name="APKTOOL_DUMMY_00c0">false</item>
+</resources>

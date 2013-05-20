@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.systemui.multiwindow.SplitPanelView android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="right|center" android:orientation="horizontal" android:id="@id/modes" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentTop="true">
+        <ImageView android:id="@id/iv_full_mode" android:layout_width="@dimen/sp_mode_button_width" android:layout_height="@dimen/sp_mode_button_height" android:src="@drawable/tw_icon_full_mode_off" android:scaleType="centerInside" />
+        <ImageView android:id="@id/iv_split_mode" android:layout_width="@dimen/sp_mode_button_width" android:layout_height="@dimen/sp_mode_button_height" android:src="@drawable/tw_icon_split_mode_off" android:scaleType="centerInside" />
+        <ImageView android:id="@id/iv_split4_mode" android:visibility="gone" android:layout_width="@dimen/sp_mode_button_width" android:layout_height="@dimen/sp_mode_button_height" android:src="@drawable/tw_icon_split4_mode_off" android:scaleType="centerInside" />
+        <ImageView android:id="@id/iv_split3r_mode" android:visibility="gone" android:layout_width="@dimen/sp_mode_button_width" android:layout_height="@dimen/sp_mode_button_height" android:src="@drawable/tw_icon_split3r_mode_off" android:scaleType="centerInside" />
+        <ImageView android:id="@id/iv_split3l_mode" android:visibility="gone" android:layout_width="@dimen/sp_mode_button_width" android:layout_height="@dimen/sp_mode_button_height" android:src="@drawable/tw_icon_split3l_mode_off" android:scaleType="centerInside" />
+    </LinearLayout>
+    <HorizontalScrollView android:id="@id/smallViews_parent" android:background="@drawable/tw_multi_window_arrange_edit_bg" android:layout_width="fill_parent" android:layout_height="@dimen/sp_small_views_height" android:layout_alignParentBottom="true" android:overScrollMode="never">
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/smallViews" android:paddingLeft="@dimen/sp_small_views_lr_padding" android:paddingRight="@dimen/sp_small_views_lr_padding" android:layout_width="fill_parent" android:layout_height="fill_parent" android:divider="@drawable/tw_multi_window_divider" android:showDividers="middle" />
+    </HorizontalScrollView>
+    <LinearLayout android:gravity="center" android:id="@id/middleSmallViews" android:background="#80000000" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/smallViews_parent" android:layout_below="@id/modes">
+        <LinearLayout android:orientation="horizontal" android:id="@id/middleViews" android:background="@drawable/tw_multi_window_arrange_bg" android:layout_width="@dimen/sp_middle_views_width" android:layout_height="@dimen/sp_middle_views_height">
+            <LinearLayout android:orientation="vertical" android:id="@id/middleViews_left" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" />
+            <LinearLayout android:orientation="vertical" android:id="@id/middleViews_right" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" />
+        </LinearLayout>
+    </LinearLayout>
+</com.android.systemui.multiwindow.SplitPanelView>

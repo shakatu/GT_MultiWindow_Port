@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="layout" name="guide_bt_enable_help">@layout/guide_bt_step_1_off</item>
+    <item type="layout" name="guide_wifi_enable_help">@layout/guide_wifi_step_1_off</item>
+</resources>

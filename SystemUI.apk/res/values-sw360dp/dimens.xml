@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="quick_setting_button_height">90.0dip</dimen>
+    <dimen name="quick_setting_button_image_height">46.0dip</dimen>
+    <dimen name="quick_setting_button_text_height">32.0dip</dimen>
+    <dimen name="quick_setting_button_text_size">13.0dip</dimen>
+    <dimen name="quick_setting_button_status_height">10.0dip</dimen>
+    <dimen name="quick_setting_button_status_padding">3.0dip</dimen>
+    <dimen name="notification_panel_headerNquicksettingbtn_height">138.0dip</dimen>
+</resources>

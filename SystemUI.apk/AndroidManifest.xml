@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest android:sharedUserId="android.uid.system" android:process="system" android:versionCode="16" android:versionName="4.1.2-P5100XXDMD1" package="com.android.systemui" coreApp="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.INJECT_EVENTS" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.STATUS_BAR_SERVICE" />
+    <uses-permission android:name="android.permission.STATUS_BAR" />
+    <uses-permission android:name="android.permission.EXPAND_STATUS_BAR" />
+    <uses-permission android:name="android.permission.REMOTE_AUDIO_PLAYBACK" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.MANAGE_NETWORK_POLICY" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.MANAGE_USB" />
+    <uses-permission android:name="android.permission.DEVICE_POWER" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.UPDATE_DEVICE_STATS" />
+    <uses-permission android:name="android.permission.MASTER_CLEAR" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.GET_DETAILED_TASKS" />
+    <uses-permission android:name="android.permission.REORDER_TASKS" />
+    <uses-permission android:name="android.permission.REMOVE_TASKS" />
+    <uses-permission android:name="android.permission.STOP_APP_SWITCHES" />
+    <uses-permission android:name="android.permission.SET_SCREEN_COMPATIBILITY" />
+    <uses-permission android:name="android.permission.START_ANY_ACTIVITY" />
+    <uses-permission android:name="android.permission.INTERNAL_SYSTEM_WINDOW" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.READ_FRAME_BUFFER" />
+    <uses-permission android:name="android.permission.MANAGE_APP_TOKENS" />
+    <uses-permission android:name="android.permission.SET_ORIENTATION" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
+    <uses-permission android:name="com.android.clipboardsaveservice.CLIPBOARDSAVESERVICE_PERMISSION" />
+    <application android:label="@string/app_label" android:icon="@*android:drawable/platlogo" android:allowClearUserData="false" android:persistent="true" android:allowBackup="false" android:hardwareAccelerated="true" android:largeHeap="true">
+        <service android:name="SystemUIService" android:exported="true" />
+        <service android:name=".screenshot.TakeScreenshotService" android:exported="false" android:process=":screenshot" />
+        <activity android:theme="@*android:style/Theme.Translucent" android:name=".screenshot.ScreenshotNotification" android:excludeFromRecents="true" />
+        <service android:name=".LoadAverageService" android:exported="true" />
+        <service android:name=".ImageWallpaper" android:permission="android.permission.BIND_WALLPAPER" android:exported="true" />
+        <receiver android:name=".BootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <activity android:label="@*android:string/usb_storage_activity_title" android:name=".usb.UsbStorageActivity" android:excludeFromRecents="true" />
+        <activity android:theme="@*android:style/Theme.Dialog.Alert" android:name="com.android.internal.app.ExternalMediaFormatActivity" android:excludeFromRecents="true" />
+        <activity android:theme="@*android:style/Theme.NoDisplay" android:name="com.android.internal.app.UsbStorageUnmountActivity" android:excludeFromRecents="true" />
+        <activity android:theme="@*android:style/Theme.Holo.Dialog.Alert" android:name=".usb.UsbConfirmActivity" android:permission="android.permission.MANAGE_USB" android:exported="true" android:excludeFromRecents="true" android:finishOnCloseSystemDialogs="true" />
+        <activity android:theme="@*android:style/Theme.Holo.Dialog.Alert" android:name=".usb.UsbPermissionActivity" android:permission="android.permission.MANAGE_USB" android:exported="true" android:excludeFromRecents="true" android:finishOnCloseSystemDialogs="true" />
+        <activity android:theme="@*android:style/Theme.Holo.Dialog.Alert" android:name=".usb.UsbResolverActivity" android:permission="android.permission.MANAGE_USB" android:exported="true" android:excludeFromRecents="true" android:finishOnCloseSystemDialogs="true" />
+        <activity android:theme="@*android:style/Theme.Holo.Dialog.Alert" android:name=".usb.UsbAccessoryUriActivity" android:permission="android.permission.MANAGE_USB" android:exported="true" android:excludeFromRecents="true" android:finishOnCloseSystemDialogs="true" />
+        <activity android:theme="@*android:style/Theme.Holo.Panel" android:name=".net.NetworkOverLimitActivity" android:permission="android.permission.MANAGE_NETWORK_POLICY" android:exported="true" android:taskAffinity="com.android.systemui.net" android:excludeFromRecents="true" android:launchMode="singleTop" android:finishOnCloseSystemDialogs="true" />
+        <activity android:theme="@*android:style/Theme.Wallpaper.NoTitleBar.Fullscreen" android:label="BeanBag" android:icon="@drawable/redbeandroid" android:name=".BeanBag" android:exported="true" android:excludeFromRecents="true" android:launchMode="singleInstance" android:hardwareAccelerated="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="com.android.internal.category.PLATLOGO" />
+            </intent-filter>
+        </activity>
+        <service android:name=".PhoneSettingService">
+            <intent-filter>
+                <action android:name="android.intent.action.SPELL" />
+            </intent-filter>
+            <meta-data android:name="android.app.spellscroll" android:resource="@xml/spellscroll" />
+        </service>
+        <uses-library android:name="com.sec.android.app.minimode" android:required="false" />
+        <uses-library android:name="touchwiz" />
+    </application>
+</manifest>

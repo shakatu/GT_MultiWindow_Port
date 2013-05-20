@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.systemui.sapps.SAppsPanel android:layout_gravity="right|center" android:id="@id/s_recents_bg_protect" android:layout_width="@dimen/s_app_panel_width" android:layout_height="@dimen/s_app_panel_height"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/s_apps_parent" android:background="@drawable/spen_slide_bg" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <RelativeLayout android:layout_width="@dimen/s_app_panel_width_layout" android:layout_height="@dimen/s_app_panel_height_layout" android:layout_marginLeft="@dimen/s_app_panel_margin_left" android:layout_marginTop="@dimen/s_app_panel_margin_top" android:layout_marginRight="@dimen/s_app_panel_margin_right" android:layout_marginBottom="@dimen/s_app_panel_margin_bottom">
+            <LinearLayout android:layout_gravity="center" android:orientation="vertical" android:id="@id/s_apps_container" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <LinearLayout android:layout_gravity="center" android:orientation="vertical" android:id="@id/s_apps_container_settings" android:background="@drawable/spen_item" android:clickable="true" android:layout_width="@dimen/s_app_panel_app_item_width" android:layout_height="wrap_content" android:layout_below="@id/s_apps_container">
+                <ImageView android:layout_gravity="center" android:id="@id/app_icon_settings" android:layout_width="@dimen/s_app_panel_app_item_icon_width" android:layout_height="@dimen/s_app_panel_app_item_icon_height" android:layout_marginLeft="@dimen/s_app_panel_app_item_icon_hori_margin" android:layout_marginRight="@dimen/s_app_panel_app_item_icon_hori_margin" android:src="@drawable/spen_ic_setting" android:scaleType="center" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</com.android.systemui.sapps.SAppsPanel>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="#ff000000" android:layout_width="fill_parent" android:layout_height="39.0dip" android:baselineAligned="false"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:systemui="http://schemas.android.com/apk/res/com.android.systemui">
+    <com.android.systemui.statusbar.policy.Clock android:textAppearance="@style/TextAppearance.StatusBar.Expanded.Clock" android:textColor="#ffffffff" android:id="@id/clock" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="4.0dip" android:layout_marginTop="-3.0dip" android:singleLine="true" systemui:ampmSmall="true" />
+    <com.android.systemui.statusbar.policy.DateView android:textAppearance="@style/TextAppearance.StatusBar.Expanded.Date" android:textColor="#ffcbcbcb" android:ellipsize="none" android:id="@id/date" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_marginRight="4.0dip" android:maxLines="2" />
+    <com.android.systemui.statusbar.RotationToggle android:id="@id/rotation_lock_button" android:visibility="gone" android:clickable="true" android:layout_width="32.0dip" android:layout_height="32.0dip" android:layout_margin="8.0dip" android:button="@drawable/ic_notify_rotation" android:contentDescription="@string/accessibility_rotation_lock_off" />
+    <Space android:layout_width="0.0dip" android:layout_height="0.0dip" android:layout_weight="1.0" />
+    <ImageView android:layout_width="1.0dip" android:layout_height="25.0dip" android:layout_marginTop="7.0dip" android:layout_marginBottom="7.0dip" android:src="@drawable/tw_quick_panel_plnm_setting_dv" />
+    <RelativeLayout android:id="@id/settings_button" android:background="@drawable/tw_quick_panel_setting_button_bg" android:focusable="true" android:visibility="visible" android:layout_width="72.0dip" android:layout_height="39.0dip">
+        <ImageView android:id="@id/settings_button_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/tw_quickpanel_icon_settings" android:scaleType="center" android:layout_centerHorizontal="true" android:layout_centerVertical="true" android:contentDescription="@string/accessibility_settings_button" />
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="dimen" name="tw_status_bar_icon_size_scale">100.0%</item>
+    <item type="dimen" name="tw_status_bar_icon_drawing_alpha">80.00001%</item>
+    <dimen name="quick_setting_button_height">121.0dip</dimen>
+    <dimen name="quick_setting_button_image_height">64.0dip</dimen>
+    <dimen name="quick_setting_button_text_height">40.0dip</dimen>
+    <dimen name="quick_setting_button_text_size">15.0dip</dimen>
+    <dimen name="quick_setting_button_status_height">15.0dip</dimen>
+    <dimen name="notification_panel_headerNquicksettingbtn_height">176.0dip</dimen>
+    <dimen name="tw_notification_panel_width">467.0dip</dimen>
+    <dimen name="tw_notification_panel_padding">24.0dip</dimen>
+</resources>

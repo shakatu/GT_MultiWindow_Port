@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="mini_app_tray_item_width">112.0dip</dimen>
+    <dimen name="mini_app_tray_item_height">130.0dip</dimen>
+    <dimen name="mini_app_tray_container_padding">8.0dip</dimen>
+</resources>

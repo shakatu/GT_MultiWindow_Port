@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="notification_panel_layout_gravity">0x33</integer>
+    <integer name="config_QuickSettingButtonCount">5</integer>
+</resources>

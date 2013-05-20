@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="spen_apps">
+        <item>com.diotek.mini_penmemo,com.diotek.mini_penmemo.Mini_PenMemo_Service</item>
+        <item>com.sec.android.app.snotebook,com.infraware.filemanager.FmFileTreeListActivity</item>
+        <item>com.android.calendar,com.android.calendar.AllInOneActivity</item>
+        <item>com.acrodea.crayonphysics,com.acrodea.crayonphysics.crayonphysics</item>
+        <item>air.com.adobe.pstouch.oem1,air.com.adobe.pstouch.oem1.AppEntry</item>
+        <item>com.infraware.PolarisOfficeStdForTablet,com.infraware.splash.SplashActivity</item>
+    </string-array>
+    <string-array name="QuickSettingButtonAttribute">
+        <item>Wifi</item>
+        <item>Location</item>
+        <item>SilentMode</item>
+        <item>AutoRotate</item>
+        <item>Bluetooth</item>
+        <item>MobileData</item>
+        <item>DormantMode</item>
+        <item>PowerSaving</item>
+        <item>AllShareCast</item>
+        <item>Sync</item>
+    </string-array>
+    <array name="shortcut_applications" />
+    <string-array name="mini_mode_apps">
+        <item>com.sec.minimode.taskcloser.MiniTaskcloserService</item>
+        <item>com.android.calendar.month.MiniCalendarService</item>
+        <item>com.sec.android.app.worldclock.MiniWorldClockService</item>
+        <item>com.diotek.mini_penmemo.Mini_PenMemo_Service</item>
+        <item>com.sec.android.app.popupcalculator.PopupCalculatorService</item>
+        <item>com.sec.android.app.music.minimode.MiniMusicService</item>
+    </string-array>
+</resources>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.systemui.recent.RecentsPanelView android:id="@id/recents_root" android:layout_width="fill_parent" android:layout_height="fill_parent" systemui:recentItemLayout="@layout/status_bar_recent_item"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:systemui="http://schemas.android.com/apk/res/com.android.systemui">
+    <View android:id="@id/recents_transition_background" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <FrameLayout android:id="@id/recents_bg_protect" android:background="@drawable/status_bar_recents_background" android:clipChildren="false" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_alignParentBottom="true">
+        <ImageView android:id="@id/recents_transition_placeholder_icon" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <com.android.systemui.recent.RecentsHorizontalScrollView android:layout_gravity="bottom|right|center" android:orientation="horizontal" android:id="@id/recents_container" android:scrollbars="none" android:fadingEdge="horizontal" android:fadingEdgeLength="@dimen/status_bar_recents_scroll_fading_edge_length" android:clipChildren="false" android:clipToPadding="false" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginRight="@dimen/status_bar_recents_right_glow_margin" android:stackFromBottom="true" android:divider="@null">
+            <LinearLayout android:orientation="horizontal" android:id="@id/recents_linear_layout" android:clipChildren="false" android:clipToPadding="false" android:layout_width="wrap_content" android:layout_height="fill_parent" />
+        </com.android.systemui.recent.RecentsHorizontalScrollView>
+        <LinearLayout android:layout_gravity="bottom|center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <ImageView android:layout_gravity="center" android:id="@id/shortcut_line" android:visibility="gone" android:layout_width="450.0dip" android:layout_height="1.0dip" android:layout_marginTop="2.0dip" android:src="@drawable/shortcut_head_line" android:scaleType="center" />
+            <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/application_shortcut_layout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="7.0dip">
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/shortcut1_layout" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="18.0dip" android:layout_marginRight="18.0dip">
+                    <ImageView android:id="@id/shortcut1_icon" android:layout_width="52.0dip" android:layout_height="52.0dip" />
+                    <TextView android:textSize="14.0dip" android:textColor="#ffd7d7d7" android:ellipsize="marquee" android:id="@id/shortcut1_text" android:fadingEdge="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/shortcut2_layout" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="18.0dip" android:layout_marginRight="18.0dip">
+                    <ImageView android:id="@id/shortcut2_icon" android:layout_width="52.0dip" android:layout_height="52.0dip" />
+                    <TextView android:textSize="14.0dip" android:textColor="#ffd7d7d7" android:ellipsize="marquee" android:id="@id/shortcut2_text" android:fadingEdge="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/shortcut3_layout" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="18.0dip" android:layout_marginRight="18.0dip">
+                    <ImageView android:id="@id/shortcut3_icon" android:layout_width="52.0dip" android:layout_height="52.0dip" />
+                    <TextView android:textSize="14.0dip" android:textColor="#ffd7d7d7" android:ellipsize="marquee" android:id="@id/shortcut3_text" android:fadingEdge="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/shortcut4_layout" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="18.0dip" android:layout_marginRight="18.0dip">
+                    <ImageView android:id="@id/shortcut4_icon" android:layout_width="52.0dip" android:layout_height="52.0dip" />
+                    <TextView android:textSize="14.0dip" android:textColor="#ffd7d7d7" android:ellipsize="marquee" android:id="@id/shortcut4_text" android:fadingEdge="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:layout_gravity="bottom" android:orientation="horizontal" android:background="@drawable/tw_ab_bottom_transparent_dark_holo" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <Button android:textSize="@dimen/tw_status_bar_recent_panel_button_text_size" android:textColor="@color/tw_status_bar_recent_btn_color" android:id="@id/recents_launch_button" android:background="@drawable/tw_recent_panel_button_forphone" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/status_bar_recent_launch_task_manager_title" android:drawableLeft="@drawable/tw_recent_panel_ic_task_manager_holo_dark" android:layout_weight="1.0" />
+                <LinearLayout android:layout_gravity="center_vertical" android:background="@drawable/tw_divider_vertical_holo_dark" android:layout_width="1.0dip" android:layout_height="29.0dip" />
+                <Button android:textSize="@dimen/tw_status_bar_recent_panel_button_text_size" android:textColor="@color/tw_status_bar_recent_btn_color" android:id="@id/recents_google_button" android:background="@drawable/tw_recent_panel_button_forphone" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/status_bar_recent_launch_google_button" android:drawableLeft="@drawable/tw_recent_panel_ic_google_holo_dark" android:layout_weight="1.0" />
+                <LinearLayout android:layout_gravity="center_vertical" android:background="@drawable/tw_divider_vertical_holo_dark" android:layout_width="1.0dip" android:layout_height="29.0dip" />
+                <Button android:textSize="@dimen/tw_status_bar_recent_panel_button_text_size" android:textColor="@color/tw_status_bar_recent_btn_color" android:id="@id/recents_RemoveAll_button" android:background="@drawable/tw_recent_panel_button_forphone" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/status_bar_recent_remove_all_button" android:drawableLeft="@drawable/tw_recent_panel_ic_delete_holo_dark" android:layout_weight="1.0" />
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+    <include android:id="@id/recents_no_apps" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="fill_parent" layout="@layout/tw_status_bar_no_recent_apps" />
+</com.android.systemui.recent.RecentsPanelView>

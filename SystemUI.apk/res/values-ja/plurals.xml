@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="status_bar_accessibility_recent_apps">
+        <item quantity="other">%d件​の​最近​利用​した​アプリ</item>
+        <item quantity="one">最近​利用​した​アプリ​1件</item>
+    </plurals>
+</resources>

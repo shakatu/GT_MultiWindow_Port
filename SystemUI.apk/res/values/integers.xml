@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="config_maxNotificationIcons">5</integer>
+    <integer name="config_show_search_delay">200</integer>
+    <integer name="config_vibration_duration">0</integer>
+    <integer name="config_search_panel_view_vibration_duration">20</integer>
+    <integer name="blinds_pop_duration_ms">10</integer>
+    <integer name="notification_panel_layout_gravity">0x37</integer>
+    <integer name="config_maxLevelOfSignalStrengthIndicator">4</integer>
+    <integer name="config_maxNotificationIconsNum">4</integer>
+</resources>

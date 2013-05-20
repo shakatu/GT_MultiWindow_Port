@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@id/notification_panel" android:background="@drawable/notification_panel_bg" android:paddingTop="@dimen/notification_panel_padding_top" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/notification_panel_margin_left"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:systemui="http://schemas.android.com/apk/res/com.android.systemui">
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginBottom="@dimen/close_handle_underlap">
+        <include android:layout_width="fill_parent" android:layout_height="@dimen/tw_notification_panel_header_height" layout="@layout/tw_status_bar_expanded_header" />
+        <TextView android:gravity="center" android:id="@id/emergency_calls_only" android:paddingBottom="4.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <HorizontalScrollView android:id="@id/quicksetting_scroller" android:scrollbars="none" android:layout_width="wrap_content" android:layout_height="@dimen/quick_setting_button_height" android:layout_marginTop="@dimen/tw_notification_panel_header_height">
+            <com.android.systemui.statusbar.policy.quicksetting.QuickSettingPanel android:orientation="horizontal" android:id="@id/quicksetting_container" android:layout_width="wrap_content" android:layout_height="wrap_content" android:divider="@drawable/tw_black_bg" android:showDividers="middle" />
+        </HorizontalScrollView>
+        <ScrollView android:id="@id/scroll" android:fadingEdge="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="@dimen/notification_panel_quicksettingbtn_height" android:overScrollMode="ifContentScrolls">
+            <LinearLayout android:orientation="vertical" android:id="@id/scrollCart" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <LinearLayout android:orientation="vertical" android:id="@id/brightness_controller" android:background="#ff000000" android:layout_width="fill_parent" android:layout_height="56.0dip">
+                    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="55.0dip">
+                        <ImageView android:id="@id/brightness_icon" android:clickable="true" android:layout_width="25.0dip" android:layout_height="fill_parent" android:layout_marginLeft="13.0dip" android:src="@drawable/ic_sysbar_brightness" android:contentDescription="@string/accessibility_brightness_icon" />
+                        <FrameLayout android:id="@id/brightness_group" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                            <com.android.systemui.statusbar.policy.ToggleSlider android:id="@id/brightness" android:layout_width="fill_parent" android:layout_height="fill_parent" systemui:text="@string/status_bar_settings_auto_brightness_label" />
+                            <com.android.systemui.statusbar.policy.ToggleSlider android:id="@id/auto_brightness" android:layout_width="fill_parent" android:layout_height="fill_parent" systemui:text="@string/status_bar_settings_auto_brightness_label" />
+                        </FrameLayout>
+                    </LinearLayout>
+                    <View android:background="#ff091a24" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+                </LinearLayout>
+                <LinearLayout android:orientation="vertical" android:id="@id/noNotificationsTitle" android:focusable="true" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="@dimen/status_bar_expanded_notification_category_text_size" android:textStyle="bold" android:textColor="@color/notification_category_color" android:gravity="left|center" android:id="@id/noNotificationsText" android:paddingLeft="11.0dip" android:layout_width="fill_parent" android:layout_height="@dimen/status_bar_expanded_notification_category_height" android:text="@string/status_bar_no_notifications_title" />
+                </LinearLayout>
+                <LinearLayout android:orientation="vertical" android:id="@id/onGoingCart" android:background="#ff293945" android:focusable="true" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="@dimen/status_bar_expanded_notification_category_height">
+                    <TextView android:textSize="@dimen/status_bar_expanded_notification_category_text_size" android:textStyle="bold" android:textColor="@color/notification_category_color" android:gravity="left|center" android:id="@id/onGoingNotificationText" android:paddingLeft="11.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/status_bar_ongoing_events_title" />
+                </LinearLayout>
+                <com.android.systemui.statusbar.policy.NotificationRowLayout android:id="@id/onGoingItems" android:layout_width="fill_parent" android:layout_height="wrap_content" systemui:rowHeight="@dimen/tw_notification_row_min_height" />
+                <LinearLayout android:orientation="vertical" android:id="@id/notificationCart" android:background="#ff293945" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="@dimen/status_bar_expanded_notification_category_height">
+                    <RelativeLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <TextView android:textSize="@dimen/status_bar_expanded_notification_category_text_size" android:textStyle="bold" android:textColor="@color/notification_category_color" android:gravity="left|center" android:id="@id/latestNotificationText" android:paddingLeft="11.0dip" android:layout_width="180.0dip" android:layout_height="fill_parent" android:text="@string/status_bar_latest_events_title" android:layout_alignParentLeft="true" />
+                        <TextView android:textSize="@dimen/status_bar_expanded_notification_clear_button_text_size" android:textColor="@color/tw_status_bar_clear_btn_text" android:gravity="center" android:id="@id/clear_all_button" android:background="@drawable/tw_btn_default_small" android:padding="0.100000024dip" android:focusable="true" android:clickable="true" android:layout_width="@dimen/status_bar_expanded_clear_button_width" android:layout_height="fill_parent" android:layout_marginRight="4.0dip" android:text="@string/status_bar_clear_all_button" android:layout_alignParentRight="true" android:contentDescription="@string/accessibility_clear_all" />
+                    </RelativeLayout>
+                </LinearLayout>
+                <com.android.systemui.statusbar.policy.NotificationRowLayout android:id="@id/notificationItems" android:layout_width="fill_parent" android:layout_height="wrap_content" systemui:rowHeight="@dimen/tw_notification_row_min_height" />
+                <com.android.systemui.statusbar.policy.NotificationRowLayout android:id="@id/latestItems" android:layout_width="fill_parent" android:layout_height="wrap_content" systemui:rowHeight="@dimen/tw_notification_row_min_height" />
+            </LinearLayout>
+        </ScrollView>
+    </FrameLayout>
+    <com.android.systemui.statusbar.phone.CloseDragHandle android:layout_gravity="bottom" android:orientation="vertical" android:id="@id/close" android:layout_width="fill_parent" android:layout_height="@dimen/tw_close_handle_height">
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <ImageView android:layout_gravity="bottom" android:layout_width="fill_parent" android:layout_height="@dimen/tw_close_handle_height" android:src="@drawable/tw_status_bar_close" android:scaleType="fitXY" />
+            <TextView android:textAppearance="@style/TextAppearance.StatusBar.Expanded.Network" android:gravity="center" android:layout_gravity="bottom" android:id="@id/carrier_label" android:layout_width="fill_parent" android:layout_height="@dimen/tw_close_handle_height" android:layout_marginBottom="10.0dip" />
+        </RelativeLayout>
+    </com.android.systemui.statusbar.phone.CloseDragHandle>
+</FrameLayout>

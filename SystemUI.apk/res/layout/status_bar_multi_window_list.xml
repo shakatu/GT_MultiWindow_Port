@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.systemui.multiwindow.MultiWindowListPanel android:gravity="center" android:paddingLeft="140.0dip" android:paddingBottom="@*android:dimen/system_bar_height" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/content_parent" android:background="@drawable/tw_multi_window_control_panel_bg" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <ListView android:id="@id/mw_list_view" android:layout_width="194.0dip" android:layout_height="wrap_content" />
+    </LinearLayout>
+</com.android.systemui.multiwindow.MultiWindowListPanel>
