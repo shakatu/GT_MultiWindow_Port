@@ -34,7 +34,7 @@
     .parameter
 
     .prologue
-    .line 8464
+    .line 8713
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerService$10;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     iput-object p3, p0, Lcom/android/server/am/ActivityManagerService$10;->val$sb:Ljava/lang/StringBuilder;
@@ -54,12 +54,12 @@
     .registers 6
 
     .prologue
-    .line 8468
+    .line 8717
     iget-object v2, p0, Lcom/android/server/am/ActivityManagerService$10;->val$sb:Ljava/lang/StringBuilder;
 
     monitor-enter v2
 
-    .line 8469
+    .line 8718
     :try_start_3
     iget-object v1, p0, Lcom/android/server/am/ActivityManagerService$10;->val$sb:Ljava/lang/StringBuilder;
 
@@ -67,7 +67,7 @@
 
     move-result-object v0
 
-    .line 8470
+    .line 8719
     .local v0, report:Ljava/lang/String;
     iget-object v1, p0, Lcom/android/server/am/ActivityManagerService$10;->val$sb:Ljava/lang/StringBuilder;
 
@@ -81,35 +81,35 @@
 
     invoke-virtual {v1, v3, v4}, Ljava/lang/StringBuilder;->delete(II)Ljava/lang/StringBuilder;
 
-    .line 8471
+    .line 8720
     iget-object v1, p0, Lcom/android/server/am/ActivityManagerService$10;->val$sb:Ljava/lang/StringBuilder;
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->trimToSize()V
 
-    .line 8472
+    .line 8721
     monitor-exit v2
     :try_end_1b
     .catchall {:try_start_3 .. :try_end_1b} :catchall_29
 
-    .line 8473
+    .line 8722
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
     move-result v1
 
     if-eqz v1, :cond_28
 
-    .line 8474
+    .line 8723
     iget-object v1, p0, Lcom/android/server/am/ActivityManagerService$10;->val$dbox:Landroid/os/DropBoxManager;
 
     iget-object v2, p0, Lcom/android/server/am/ActivityManagerService$10;->val$dropboxTag:Ljava/lang/String;
 
     invoke-virtual {v1, v2, v0}, Landroid/os/DropBoxManager;->addText(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 8476
+    .line 8725
     :cond_28
     return-void
 
-    .line 8472
+    .line 8721
     .end local v0           #report:Ljava/lang/String;
     :catchall_29
     move-exception v1

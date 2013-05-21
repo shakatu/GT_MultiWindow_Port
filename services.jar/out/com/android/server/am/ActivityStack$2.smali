@@ -1,11 +1,14 @@
 .class Lcom/android/server/am/ActivityStack$2;
-.super Landroid/app/IThumbnailRetriever$Stub;
+.super Ljava/lang/Object;
 .source "ActivityStack.java"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/server/am/ActivityStack;->getTaskAccessInfoLocked(IZ)Lcom/android/server/am/TaskAccessInfo;
+    value = Lcom/android/server/am/ActivityStack;->updateTasksOrderLocked(Ljava/util/List;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,66 +20,54 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/server/am/ActivityStack;
 
-.field final synthetic val$thumbs:Lcom/android/server/am/TaskAccessInfo;
+.field final synthetic val$zoneInfo:I
 
 
 # direct methods
-.method constructor <init>(Lcom/android/server/am/ActivityStack;Lcom/android/server/am/TaskAccessInfo;)V
+.method constructor <init>(Lcom/android/server/am/ActivityStack;I)V
     .registers 3
     .parameter
     .parameter
 
     .prologue
-    .line 5629
+    .line 4659
     iput-object p1, p0, Lcom/android/server/am/ActivityStack$2;->this$0:Lcom/android/server/am/ActivityStack;
 
-    iput-object p2, p0, Lcom/android/server/am/ActivityStack$2;->val$thumbs:Lcom/android/server/am/TaskAccessInfo;
+    iput p2, p0, Lcom/android/server/am/ActivityStack$2;->val$zoneInfo:I
 
-    invoke-direct {p0}, Landroid/app/IThumbnailRetriever$Stub;-><init>()V
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public getThumbnail(I)Landroid/graphics/Bitmap;
-    .registers 3
-    .parameter "index"
+.method public run()V
+    .registers 4
 
     .prologue
-    .line 5631
-    if-ltz p1, :cond_c
+    .line 4662
+    new-instance v0, Landroid/content/Intent;
 
-    iget-object v0, p0, Lcom/android/server/am/ActivityStack$2;->val$thumbs:Lcom/android/server/am/TaskAccessInfo;
+    const-string v1, "com.sec.android.action.NOTIFY_FOCUS_WINDOWS"
 
-    iget-object v0, v0, Lcom/android/server/am/TaskAccessInfo;->subtasks:Ljava/util/ArrayList;
+    invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+    .line 4663
+    .local v0, notifyFocusIntent:Landroid/content/Intent;
+    const-string v1, "com.sec.android.extra.ARRAGE_TYPE"
 
-    move-result v0
+    iget v2, p0, Lcom/android/server/am/ActivityStack$2;->val$zoneInfo:I
 
-    if-lt p1, v0, :cond_e
+    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 5632
-    :cond_c
-    const/4 v0, 0x0
+    .line 4664
+    iget-object v1, p0, Lcom/android/server/am/ActivityStack$2;->this$0:Lcom/android/server/am/ActivityStack;
 
-    .line 5634
-    :goto_d
-    return-object v0
+    iget-object v1, v1, Lcom/android/server/am/ActivityStack;->mContext:Landroid/content/Context;
 
-    :cond_e
-    iget-object v0, p0, Lcom/android/server/am/ActivityStack$2;->val$thumbs:Lcom/android/server/am/TaskAccessInfo;
+    invoke-virtual {v1, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    iget-object v0, v0, Lcom/android/server/am/TaskAccessInfo;->subtasks:Ljava/util/ArrayList;
-
-    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/android/server/am/TaskAccessInfo$SubTask;
-
-    iget-object v0, v0, Lcom/android/server/am/TaskAccessInfo$SubTask;->thumbnail:Landroid/graphics/Bitmap;
-
-    goto :goto_d
+    .line 4665
+    return-void
 .end method

@@ -9097,10 +9097,6 @@
 
     if-eqz v8, :cond_7c
 
-    iget-boolean v8, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->WACOM_POLICY_FOLLOW_APPLICATION_ROTATION:Z
-
-    if-nez v8, :cond_7c
-
     .line 1709
     new-instance v8, Lcom/android/internal/policy/impl/PhoneWindowManager$MyOrientationListenerForPenGesture;
 
