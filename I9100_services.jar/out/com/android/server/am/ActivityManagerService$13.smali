@@ -32,10 +32,10 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .prologue
-    .line 10762
+    .line 10685
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -44,7 +44,7 @@
 
 # virtual methods
 .method public compare(Landroid/util/Pair;Landroid/util/Pair;)I
-    .registers 7
+    .locals 4
     .parameter
     .parameter
     .annotation system Ldalvik/annotation/Signature;
@@ -70,7 +70,7 @@
 
     const/4 v1, -0x1
 
-    .line 10766
+    .line 10689
     iget-object v0, p1, Landroid/util/Pair;->first:Ljava/lang/Object;
 
     check-cast v0, Lcom/android/server/am/ProcessRecord;
@@ -83,9 +83,9 @@
 
     iget v0, v0, Lcom/android/server/am/ProcessRecord;->setAdj:I
 
-    if-eq v3, v0, :cond_22
+    if-eq v3, v0, :cond_1
 
-    .line 10767
+    .line 10690
     iget-object v0, p1, Landroid/util/Pair;->first:Ljava/lang/Object;
 
     check-cast v0, Lcom/android/server/am/ProcessRecord;
@@ -98,22 +98,22 @@
 
     iget v0, v0, Lcom/android/server/am/ProcessRecord;->setAdj:I
 
-    if-le v3, v0, :cond_20
+    if-le v3, v0, :cond_0
 
     move v0, v1
 
-    .line 10772
-    :goto_1f
+    .line 10695
+    :goto_0
     return v0
 
-    :cond_20
+    :cond_0
     move v0, v2
 
-    .line 10767
-    goto :goto_1f
+    .line 10690
+    goto :goto_0
 
-    .line 10769
-    :cond_22
+    .line 10692
+    :cond_1
     iget-object v0, p1, Landroid/util/Pair;->second:Ljava/lang/Object;
 
     check-cast v0, Ljava/lang/Integer;
@@ -130,9 +130,9 @@
 
     move-result v0
 
-    if-eq v3, v0, :cond_4a
+    if-eq v3, v0, :cond_3
 
-    .line 10770
+    .line 10693
     iget-object v0, p1, Landroid/util/Pair;->second:Ljava/lang/Object;
 
     check-cast v0, Ljava/lang/Integer;
@@ -149,32 +149,32 @@
 
     move-result v0
 
-    if-le v3, v0, :cond_48
+    if-le v3, v0, :cond_2
 
-    :goto_46
+    :goto_1
     move v0, v1
 
-    goto :goto_1f
+    goto :goto_0
 
-    :cond_48
+    :cond_2
     move v1, v2
 
-    goto :goto_46
+    goto :goto_1
 
-    .line 10772
-    :cond_4a
+    .line 10695
+    :cond_3
     const/4 v0, 0x0
 
-    goto :goto_1f
+    goto :goto_0
 .end method
 
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .registers 4
+    .locals 1
     .parameter "x0"
     .parameter "x1"
 
     .prologue
-    .line 10762
+    .line 10685
     check-cast p1, Landroid/util/Pair;
 
     .end local p1

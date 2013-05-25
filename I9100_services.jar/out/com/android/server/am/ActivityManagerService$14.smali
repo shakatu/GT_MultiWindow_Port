@@ -29,10 +29,10 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .prologue
-    .line 11028
+    .line 10951
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,56 +41,56 @@
 
 # virtual methods
 .method public compare(Lcom/android/server/am/ActivityManagerService$MemItem;Lcom/android/server/am/ActivityManagerService$MemItem;)I
-    .registers 7
+    .locals 4
     .parameter "lhs"
     .parameter "rhs"
 
     .prologue
-    .line 11031
+    .line 10954
     iget-wide v0, p1, Lcom/android/server/am/ActivityManagerService$MemItem;->pss:J
 
     iget-wide v2, p2, Lcom/android/server/am/ActivityManagerService$MemItem;->pss:J
 
     cmp-long v0, v0, v2
 
-    if-gez v0, :cond_a
+    if-gez v0, :cond_0
 
-    .line 11032
+    .line 10955
     const/4 v0, 0x1
 
-    .line 11036
-    :goto_9
+    .line 10959
+    :goto_0
     return v0
 
-    .line 11033
-    :cond_a
+    .line 10956
+    :cond_0
     iget-wide v0, p1, Lcom/android/server/am/ActivityManagerService$MemItem;->pss:J
 
     iget-wide v2, p2, Lcom/android/server/am/ActivityManagerService$MemItem;->pss:J
 
     cmp-long v0, v0, v2
 
-    if-lez v0, :cond_14
+    if-lez v0, :cond_1
 
-    .line 11034
+    .line 10957
     const/4 v0, -0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    .line 11036
-    :cond_14
+    .line 10959
+    :cond_1
     const/4 v0, 0x0
 
-    goto :goto_9
+    goto :goto_0
 .end method
 
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .registers 4
+    .locals 1
     .parameter "x0"
     .parameter "x1"
 
     .prologue
-    .line 11028
+    .line 10951
     check-cast p1, Lcom/android/server/am/ActivityManagerService$MemItem;
 
     .end local p1

@@ -25,12 +25,12 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/am/ActivityStack;I)V
-    .registers 3
+    .locals 0
     .parameter
     .parameter
 
     .prologue
-    .line 4507
+    .line 4488
     iput-object p1, p0, Lcom/android/server/am/ActivityStack$3;->this$0:Lcom/android/server/am/ActivityStack;
 
     iput p2, p0, Lcom/android/server/am/ActivityStack$3;->val$zoneInfo:I
@@ -43,17 +43,17 @@
 
 # virtual methods
 .method public run()V
-    .registers 4
+    .locals 3
 
     .prologue
-    .line 4510
+    .line 4491
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "com.sec.android.action.NOTIFY_FOCUS_WINDOWS"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 4511
+    .line 4492
     .local v0, notifyFocusIntent:Landroid/content/Intent;
     const-string v1, "com.sec.android.extra.ARRAGE_TYPE"
 
@@ -61,13 +61,13 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 4512
+    .line 4493
     iget-object v1, p0, Lcom/android/server/am/ActivityStack$3;->this$0:Lcom/android/server/am/ActivityStack;
 
     iget-object v1, v1, Lcom/android/server/am/ActivityStack;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 4513
+    .line 4494
     return-void
 .end method

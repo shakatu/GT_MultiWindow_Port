@@ -23,11 +23,11 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/am/ActivityStack;)V
-    .registers 2
+    .locals 0
     .parameter
 
     .prologue
-    .line 4299
+    .line 4283
     iput-object p1, p0, Lcom/android/server/am/ActivityStack$2;->this$0:Lcom/android/server/am/ActivityStack;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -38,18 +38,18 @@
 
 # virtual methods
 .method public run()V
-    .registers 5
+    .locals 4
 
     .prologue
-    .line 4302
+    .line 4286
     iget-object v0, p0, Lcom/android/server/am/ActivityStack$2;->this$0:Lcom/android/server/am/ActivityStack;
 
     iget-object v1, v0, Lcom/android/server/am/ActivityStack;->mService:Lcom/android/server/am/ActivityManagerService;
 
     monitor-enter v1
 
-    .line 4303
-    :try_start_5
+    .line 4287
+    :try_start_0
     iget-object v0, p0, Lcom/android/server/am/ActivityStack$2;->this$0:Lcom/android/server/am/ActivityStack;
 
     const/4 v2, 0x0
@@ -58,19 +58,19 @@
 
     invoke-virtual {v0, v2, v3}, Lcom/android/server/am/ActivityStack;->ensureActivitiesVisibleLocked(Lcom/android/server/am/ActivityRecord;I)V
 
-    .line 4304
+    .line 4288
     monitor-exit v1
 
-    .line 4305
+    .line 4289
     return-void
 
-    .line 4304
-    :catchall_e
+    .line 4288
+    :catchall_0
     move-exception v0
 
     monitor-exit v1
-    :try_end_10
-    .catchall {:try_start_5 .. :try_end_10} :catchall_e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
 .end method

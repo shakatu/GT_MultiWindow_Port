@@ -5,7 +5,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Lcom/android/server/am/ActivityRecord;Lcom/android/server/am/ActivityRecord;)V
-    .registers 14
+    .locals 10
     .parameter "context"
     .parameter "cur"
     .parameter "next"
@@ -18,7 +18,7 @@
     const/4 v8, 0x1
 
     .line 31
-    const v3, 0x1030310
+    const v3, 0x103030e
 
     invoke-direct {p0, p1, v3}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
 

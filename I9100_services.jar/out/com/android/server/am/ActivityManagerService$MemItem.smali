@@ -37,28 +37,28 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;JI)V
-    .registers 6
+    .locals 0
     .parameter "_label"
     .parameter "_shortLabel"
     .parameter "_pss"
     .parameter "_id"
 
     .prologue
-    .line 11017
+    .line 10940
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 11018
+    .line 10941
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerService$MemItem;->label:Ljava/lang/String;
 
-    .line 11019
+    .line 10942
     iput-object p2, p0, Lcom/android/server/am/ActivityManagerService$MemItem;->shortLabel:Ljava/lang/String;
 
-    .line 11020
+    .line 10943
     iput-wide p3, p0, Lcom/android/server/am/ActivityManagerService$MemItem;->pss:J
 
-    .line 11021
+    .line 10944
     iput p5, p0, Lcom/android/server/am/ActivityManagerService$MemItem;->id:I
 
-    .line 11022
+    .line 10945
     return-void
 .end method

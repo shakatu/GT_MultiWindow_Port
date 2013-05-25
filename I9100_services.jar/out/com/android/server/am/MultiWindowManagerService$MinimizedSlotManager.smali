@@ -31,16 +31,16 @@
 
 # direct methods
 .method constructor <init>(Lcom/android/server/am/MultiWindowManagerService;)V
-    .registers 3
+    .locals 1
     .parameter
 
     .prologue
-    .line 910
+    .line 838
     iput-object p1, p0, Lcom/android/server/am/MultiWindowManagerService$MinimizedSlotManager;->this$0:Lcom/android/server/am/MultiWindowManagerService;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 911
+    .line 839
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -53,38 +53,38 @@
 
 # virtual methods
 .method clearSlots()V
-    .registers 2
+    .locals 1
 
     .prologue
-    .line 929
+    .line 857
     iget-object v0, p0, Lcom/android/server/am/MultiWindowManagerService$MinimizedSlotManager;->mSlots:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 930
+    .line 858
     return-void
 .end method
 
 .method getSlot()I
-    .registers 5
+    .locals 4
 
     .prologue
-    .line 914
+    .line 842
     iget-object v2, p0, Lcom/android/server/am/MultiWindowManagerService$MinimizedSlotManager;->mSlots:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 915
+    .line 843
     .local v0, N:I
     const/4 v1, 0x0
 
     .local v1, i:I
-    :goto_7
-    if-ge v1, v0, :cond_1b
+    :goto_0
+    if-ge v1, v0, :cond_1
 
-    .line 916
+    .line 844
     iget-object v2, p0, Lcom/android/server/am/MultiWindowManagerService$MinimizedSlotManager;->mSlots:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -97,22 +97,22 @@
 
     move-result v2
 
-    if-nez v2, :cond_18
+    if-nez v2, :cond_0
 
-    .line 921
+    .line 849
     .end local v1           #i:I
-    :goto_17
+    :goto_1
     return v1
 
-    .line 915
+    .line 843
     .restart local v1       #i:I
-    :cond_18
+    :cond_0
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    .line 920
-    :cond_1b
+    .line 848
+    :cond_1
     iget-object v2, p0, Lcom/android/server/am/MultiWindowManagerService$MinimizedSlotManager;->mSlots:Ljava/util/ArrayList;
 
     const/4 v3, 0x0
@@ -125,17 +125,17 @@
 
     move v1, v0
 
-    .line 921
-    goto :goto_17
+    .line 849
+    goto :goto_1
 .end method
 
 .method setSlot(IZ)V
-    .registers 5
+    .locals 2
     .parameter "index"
     .parameter "value"
 
     .prologue
-    .line 925
+    .line 853
     iget-object v0, p0, Lcom/android/server/am/MultiWindowManagerService$MinimizedSlotManager;->mSlots:Ljava/util/ArrayList;
 
     invoke-static {p2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -144,6 +144,6 @@
 
     invoke-virtual {v0, p1, v1}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 926
+    .line 854
     return-void
 .end method

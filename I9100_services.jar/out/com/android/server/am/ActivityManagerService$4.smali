@@ -16,12 +16,12 @@
 
 # direct methods
 .method constructor <init>(Ljava/lang/String;I)V
-    .registers 3
+    .locals 0
     .parameter "x0"
     .parameter "x1"
 
     .prologue
-    .line 3502
+    .line 3494
     invoke-direct {p0, p1, p2}, Landroid/os/FileObserver;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -30,24 +30,24 @@
 
 # virtual methods
 .method public declared-synchronized onEvent(ILjava/lang/String;)V
-    .registers 4
+    .locals 1
     .parameter "event"
     .parameter "path"
 
     .prologue
-    .line 3503
+    .line 3495
     monitor-enter p0
 
-    :try_start_1
+    :try_start_0
     invoke-virtual {p0}, Ljava/lang/Object;->notify()V
-    :try_end_4
-    .catchall {:try_start_1 .. :try_end_4} :catchall_6
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit p0
 
     return-void
 
-    :catchall_6
+    :catchall_0
     move-exception v0
 
     monitor-exit p0
